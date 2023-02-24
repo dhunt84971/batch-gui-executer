@@ -35,10 +35,12 @@ function createWindow() {
   win.setMenuBarVisibility(false);
 
   // Open the DevTools.
+  
   devtools = new BrowserWindow();
   // Open the DevTools.
   win.webContents.setDevToolsWebContents(devtools.webContents);
   win.webContents.openDevTools({mode: 'detach'});
+  
 
   win.once('ready-to-show', () => {
     //win.show();

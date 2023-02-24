@@ -33,13 +33,14 @@ const path = require("path");
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const { parsed, boolean } = require("yargs");
+const spawn = require("child_process").spawn;
 
 
 //#region HELPER FUNCTIONS
 function logMessage(message){
     // Split the messages on the line feed.
     let messages = message.split("\n");
-    for (msg of messages){
+    for (var msg of messages){
         if (msg.includes("WARNING")){
             msg = "<span class='logWarning'>" + msg + "</span>"
             logBox.innerHTML = logBox.innerHTML + msg;
@@ -56,17 +57,19 @@ function logMessage(message){
     }
 }
 
-function runCLI(args){
-    logMessage("dotnet run " + args.join(" ") + "\n");
-    const dotnetProcess = spawn("dotnet", ["run", args]);
+function runCLI(batchFile){
+    let command = batchFile.split(" ")[0];
+    let args = batchFile.split(" ").slice(1);
+    logMessage("Executing: " + command + " " + args);
+    const process = spawn(command, args);
 
-    dotnetProcess.stdout.on("data", (data) => {
+    process.stdout.on("data", (data) => {
         var message = new TextDecoder("utf-8").decode(data);
         logMessage(message);
     });
 
     return new Promise(function(resolve,reject){
-        dotnetProcess.on("exit", ()=>{
+        process.on("exit", ()=>{
             resolve();
         });
     });
@@ -160,17 +163,32 @@ async function parseArgs(){
 async function init() {
     let args = await parseArgs();
     console.log(args);
+    // Display the window.
     if (args["hidden"] == false){
         electron.ipcRenderer.send("showWindow", {size: args["size"], title: args["title"]});
     }
+    // Update the DOM components based on the passed arguments.
     message.innerHTML = args["message"];
     if (args["log-window"])
         logWindow.classList.remove("hide");
+    // Run the command.
+    await runCLI(args["batch-file"]);
+    // Show the okay button or close.
+    if (args["wait-for-ok"]){
+        btnOk.classList.remove("hide");
+    }
+    else {
+        var window = remote.getCurrentWindow();
+        window.close();
+    }
 }
 
 init();
 //#endregion INITIALIZATION
 
 //#region EVENT HANDLERS
-
+document.getElementById("btnOk").addEventListener("click", () =>{
+    var window = remote.getCurrentWindow();
+    window.close();
+});
 //#endregion EVENT HANDLERS

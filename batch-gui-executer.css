@@ -162,11 +162,23 @@ body {
   display: none !important;
 }
 
+.overflowAuto {
+  overflow: auto;
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
+
+.overflowScrollY {
+  overflow-y: scroll;
+}
+
 #logWindow {
   background: var(--app_bgColor);
 }
 
-#logbox {
+#logBox {
   background-color: #202020;
   color: white;
   word-wrap: break-word;
