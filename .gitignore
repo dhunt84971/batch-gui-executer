@@ -1,0 +1,14 @@
+node_modules/
+node_modules/*
+dist/*
+.settings
+.globals.db
+*.png~
+bash.exe.stackdump
+.VSCodeCounter/
+.VSCodeCounter/*
+documents/
+documents/*
+*.trd
+*.rcp
+*.pdf

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Batch GUI Executer</title>
+    <link rel="stylesheet" href="batch-gui-executer.css">
+</head>
+  
+  <body>
+    
+    <div class="container">
+        <div class="vboxFill noMargin noPadding">
+            <div class="vertDivider"></div>
+            <div class="vbox">
+                <div id="message">
+                </div>
+            </div>
+            <div class="vertDivider"></div>
+            <!--#region LOGWINDOW-->
+            <div class="vboxFill overflowHidden noPadding hide" id="logWindow">
+                <div class="vertDivider"></div>
+                <div class="vboxFill overflowHidden">
+                    <div class="hbox">
+                        <div class="labelH2">Log -</div>
+                    </div>
+                    <div class="vertDivider"></div>
+                    <div class="vboxFill leftMargin rightMargin" id="logbox"></div>
+                    <div class="vertSpacer"></div>
+                </div>
+            </div>
+            <!--#endregion LOGWINDOW-->
+            <div class="hbox">
+                <div class="hboxFill"></div>
+                <div class="btn">
+                    OK
+                </div>
+                <div class="hboxFill"></div>
+            </div>
+            <div class="vertDivider"></div>
+        </div>
+    </div>
+    
+    <script src="batch-gui-executer.js"></script>
+
+</body>
+</html>

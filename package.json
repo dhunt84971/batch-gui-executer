@@ -1,0 +1,43 @@
+{
+  "name": "batch-gui-executer",
+  "version": "0.0.1",
+  "description": "Batch file graphical wrapper tool",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "dist": "npm run build"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "author": {
+    "name": "David Hunt",
+    "email": "dhuntlinux@gmail.com"
+  },
+  "license": "MIT",
+  "build": {
+    "appId": "batch-gui-executer",
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Office",
+      "maintainer": "dhuntlinux@gmail.com"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/app.ico"
+    },
+    "extraFiles": [
+      "license.md",
+      "license_report.txt"
+    ]
+  },
+   "devDependencies": {
+    "electron": "^10.4.7",
+    "electron-builder": "20.44.4"
+  },
+  "dependencies": {
+    "yargs": "^17.2.1"
+  }
+}
