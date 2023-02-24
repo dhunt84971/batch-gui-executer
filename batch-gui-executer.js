@@ -58,11 +58,19 @@ function logMessage(message){
 }
 
 function runCLI(batchFile){
-    let command = batchFile.split(" ")[0];
-    let args = batchFile.split(" ").slice(1);
-    logMessage("Executing: " + command + " " + args);
-    const process = spawn(command, args);
-
+    logMessage("Executing: " + batchFile);
+    var process;
+    let words = batchFile.split(" ");
+    let command = words[0];
+    let args = "";
+    if (words.length > 1){
+        args = words.slice(1);
+        process = spawn(command, args);
+    }
+    else{
+        process = spawn(command);
+    }
+    
     process.stdout.on("data", (data) => {
         var message = new TextDecoder("utf-8").decode(data);
         logMessage(message);
@@ -111,7 +119,8 @@ async function postProcessArgs(args){
     if (!args["wait-for-ok"]) args["wait-for-ok"] = false;
     if (!args["log-window"]) args["log-window"] = false;
     if (!args["message"]) args["message"] = "Executing " + args["batch-file"];
-    if (!args["size"]) args["size"] = "300x200";
+    if (!args["size"]) args["size"] = "400x300";
+    if (!args["title"]) args["title"] = "batch-gui-executer";
     return args;
 }
 
