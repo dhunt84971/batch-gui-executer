@@ -1,0 +1,11 @@
+# Example 1 -
+C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w
+
+# Example 2 -
+C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "500x400"
+
+# Example 3 -
+C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "500x400" -t "Directory Listing" -m "Showing directory:"
+
+# Example 4 -
+C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "400x150" -t "Directory Listing" -m "Command executed with no log displayed."

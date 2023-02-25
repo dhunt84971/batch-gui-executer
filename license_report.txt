@@ -1,0 +1,4 @@
+department  project             name            license period  material / not material  license type  link                                                  remote version  installed version  author
+----------  -------             ----            --------------  -----------------------  ------------  ----                                                  --------------  -----------------  ------
+Automation  batch-gui-executer  license-report  perpetual       material                 MIT           git+https://github.com/ironSource/license-report.git  4.5.0           4.5.0              Yaniv Kessler
+Automation  batch-gui-executer  yargs           perpetual       material                 MIT           git+https://github.com/yargs/yargs.git                17.7.1          17.2.1             n/a

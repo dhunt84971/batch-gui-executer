@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "start": "electron .",
-    "dist": "npm run build"
+    "dist": "npm run licReport && build",
+    "licReport": "license-report --only=prod --department.value=Automation --relatedTo.label=project --relatedTo.value=batch-gui-executer --output=table > license_report.txt"
   },
   "postinstall": "electron-builder install-app-deps",
   "author": {
@@ -26,7 +27,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "build/app.ico"
+      "icon": "images/app.ico"
     },
     "extraFiles": [
       "license.md",
@@ -35,9 +36,10 @@
   },
   "devDependencies": {
     "electron": "^10.4.7",
-    "electron-builder": "20.44.4"
+    "electron-builder": "^20.44.4"
   },
   "dependencies": {
+    "license-report": "^4.5.0",
     "yargs": "^17.2.1"
   }
 }
