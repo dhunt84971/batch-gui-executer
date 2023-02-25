@@ -27,6 +27,41 @@ The following command line arguments can be issued.  Most are optional.
 | -t | --title | The title to be displayed for the window. | Optional | -t "Print Report" | The application name "Batch-GUI-Executer" will be used by default. |
 | -m | --message | The message to display to the end-user. | Optional | -m "Running report.....  Please wait." | If this option is not specified the message will be "Executing **batch-file** name." |
 
+## Examples
+The following examples assume the existance of a batch file called RunThis.bat located in the root of the C: drive on a Windows PC.  RunThis.bat contains the following:
+```
+dir %1
+```
+
+### Example 1
+  ```
+  C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w
+  ```
+  
+  <img src="./Examples/Example1.png" style="width: 400px; height: auto">
+
+### Example 2
+  ```
+  C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "500x400"
+  ```
+  
+  <img src="./Examples/Example2.png" style="width: 500px; height: auto">
+
+### Example 3
+  ```
+  C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "500x400" -t "Directory Listing" -m "Showing directory:"
+  ```
+  
+  <img src="./Examples/Example3.png" style="width: 500px; height: auto">
+
+### Example 4
+  ```
+  C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "400x150" -t "Directory Listing" -m "Command executed with no log displayed."
+  ```
+  
+  <img src="./Examples/Example4.png" style="width: 400px; height: auto">
+
+
 ## Executing from ```npm start``` Script
 In order to pass arguments properly when executing this from the development enviroment, be sure to use the double-dash after ```npm start```.  For example, the syntax to execute the application using npm start would be:
 
