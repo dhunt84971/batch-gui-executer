@@ -56,7 +56,7 @@ dir %1
 
 ### Example 4
   ```
-  C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -l -w -s "400x150" -t "Directory Listing" -m "Command executed with no log displayed."
+  C:\Users\User\AppData\Local\Programs\batch-gui-executer\batch-gui-executer.exe -b "RunThis.bat b*" -w -s "400x150" -t "Directory Listing" -m "Command executed with no log displayed."
   ```
   
   <img src="./Examples/Example4.png" style="width: 400px; height: auto">
