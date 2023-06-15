@@ -1,16 +1,16 @@
 # Batch-GUI-Executer
-This program can be called and passed the name of a batch file (or executable) with arguments.  It will then display a window, execute the program and wait for the it to complete before closing the window.
+This program can be called and passed the name of a batch file (or executable) with arguments.  It will then display a window, execute the program and wait for it to complete before closing the window.
 
 It is intended to be called by other programs that need to execute an external command or application where displaying the status of the external command would be difficult and the length of time to execute the external command is more than a few seconds.  In these situations, this application provides the feedback to the user that something is happening (e.g. like generating/printing a report).
 
 Arguments passed to this application will allow the programmer to customize the window and its operation.
 
 ## Installation Folder
-On windows computers the application is typically installed in the following folder:
+On Windows computers the application is typically installed in the following folder:
 
 ```C:\Users\<username>\AppData\Local\Programs\batch-gui-executer```
 
-This is usually hidden but can be found by typing ```%LOCALAPPDATA%``` into the address bar of windows explorer.
+This is usually hidden but can be found by typing ```%LOCALAPPDATA%``` into the address bar of Windows File Explorer.
 
 Since the application is intended to be run from the command line it will be necessary to open a command prompt and navigate to this folder or add the folder path to the PATH environment variable.
 
