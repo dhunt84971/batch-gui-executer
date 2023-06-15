@@ -28,7 +28,7 @@ The following command line arguments can be issued.  Most are optional.
 | -m | --message | The message to display to the end-user. | Optional | -m "Running report.....  Please wait." | If this option is not specified the message will be "Executing **batch-file**." |
 
 ## Examples
-The following examples assume the existance of a batch file called RunThis.bat located in the root of the C: drive on a Windows PC.  RunThis.bat contains the following:
+The following examples assume the existence of a batch file called RunThis.bat located in the root of the C: drive on a Windows PC.  RunThis.bat contains the following:
 ```
 dir %1
 ```
